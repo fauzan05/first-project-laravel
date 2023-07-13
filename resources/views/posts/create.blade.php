@@ -11,10 +11,11 @@
 
 <body>
     <div class="container">
-        <div class="row justify-content-center align-items-center" style="height: 100vh;">
-        <h1 class="text-center col-md-12">Buat Postingan Baru</h1>
-            <div class="col-md-5">
-                <form method="get">
+        <div class="row justify-content-center align-items-center p-0" style="height: 100vh;">
+        <h1 class="text-center col-lg-12">Buat Postingan Baru</h1>
+            <div class="col-lg-5">
+                <form method="post" action="{{ url('posts') }}">
+                    @csrf
                     <div class="mb-3">
                         <label for="judul" class="form-label">Judul</label>
                         <input type="text" name="title" class="form-control" id="judul">

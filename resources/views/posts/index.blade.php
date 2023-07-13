@@ -14,7 +14,7 @@
     <h1 class="text-center">My Blog
         <a href="{{ url('posts/create') }}" type="button" class="btn btn-primary mx-5">+ Buat Postingan</a>
     </h1>
-    <div class="d-flex align-items-center justify-content-center" style="height: 100vh;">
+    <div class="d-flex align-items-center justify-content-center" style="height: auto;">
         @foreach($posts as $post)
         @php($post = explode("," , $post))
         <div class="container text-center">
