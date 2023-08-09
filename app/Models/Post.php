@@ -10,6 +10,12 @@ class Post extends Model
 {
     use HasFactory;
     use SoftDeletes;
+
+    public function comments()
+    {
+        return $this->hasMany(Comment::class);
+    }
+
     public function scopeActive($query)
     {
         return $query->where('active', true);
