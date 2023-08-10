@@ -16,6 +16,11 @@ class Post extends Model
         return $this->hasMany(Comment::class);
     }
 
+    public function totalComments()
+    {
+        return $this->comments()->count();        
+    }
+
     public function scopeActive($query)
     {
         return $query->where('active', true);
