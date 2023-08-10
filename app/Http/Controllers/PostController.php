@@ -38,12 +38,11 @@ class PostController extends Controller
     {
         $title = $request->input('title');
         $content = $request->input('content');
-        $date = new DateTime("", new DateTimeZone('Asia/Jakarta'));
         Post::insert([
             'title' => $title,
             'content' => $content,
-            'created_at' => $date->format('Y-m-d H:i:s'),
-            'updated_at' => $date->format('Y-m-d H:i:s')
+            'created_at' => date('Y-m-d H:i:s'),
+            'updated_at' => date('Y-m-d H:i:s')
         ]);
 
         return redirect('posts');
@@ -86,12 +85,11 @@ class PostController extends Controller
     {
         $title = $request->input('title');
         $content = $request->input('content');
-        $date = new DateTime("", new DateTimeZone('Asia/Jakarta'));
         Post::where('id', $id)
             ->update([
                 'title' => $title,
                 'content' => $content,
-                'updated_at' =>  $date->format('Y-m-d H:i:s')
+                'updated_at' =>  date('Y-m-d H:i:s')
             ]);
 
         return redirect("posts/{$id}");
@@ -103,6 +101,6 @@ class PostController extends Controller
     public function destroy(string $id)
     {
         Post::where('id', $id)->delete();
-        return redirect("posts/");
+        return redirect("posts/index");
     }
 }
