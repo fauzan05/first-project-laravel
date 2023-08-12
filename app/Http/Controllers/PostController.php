@@ -16,7 +16,7 @@ class PostController extends Controller
      */
     public function index()
     {
-        $posts = Post::Active()->get();
+        $posts = Post::active()->get();
         $view_data = [
             'posts' => $posts
         ];
@@ -42,7 +42,8 @@ class PostController extends Controller
             'title' => $title,
             'content' => $content,
             'created_at' => date('Y-m-d H:i:s'),
-            'updated_at' => date('Y-m-d H:i:s')
+            'updated_at' => date('Y-m-d H:i:s'),
+            'deleted_at' => null
         ]);
 
         return redirect('posts');
