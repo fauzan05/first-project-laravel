@@ -21,13 +21,10 @@ class Post extends Model
     {
         parent::boot();
 
-        // static::creating(function($post){
-        //     $post->slug = str_replace('', '-', $post->title);
-        // });
-
-        static::retrieved(function($titlePost){
-            $titlePost = str_replace('', '-', $titlePost->title);
+        static::creating(function($post){
+            $post->slug = str_replace('', '-', $post->title);
         });
+
     }
 
     public function comments()

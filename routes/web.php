@@ -19,9 +19,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::post('login', [AuthController::class, 'auth']);
+Route::post('register', [AuthController::class, 'register']);
+Route::post('posts', [PostController::class, 'store']);
 Route::get('login', [AuthController::class, 'login']);
 Route::get('logout', [AuthController::class, 'logout']);
-Route::post('posts', [PostController::class, 'store']);
+Route::get('register', [AuthController::class, 'registerForm']);
 Route::get('posts', [PostController::class, 'index']);
 Route::get('posts/create', [PostController::class, 'create']);
 Route::get('posts/{id}', [PostController::class, 'show']);

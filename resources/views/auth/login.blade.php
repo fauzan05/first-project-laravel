@@ -23,8 +23,12 @@
                     <label for="exampleInputPassword1" class="form-label">Password</label>
                     <input type="password" name="password" class="form-control" id="exampleInputPassword1">
                 </div>
-                <button type="submit" class="btn btn-primary" style="width: 100%;">Login</button>
+                <button type="submit" class="btn btn-primary" style="width: 100%;">Masuk</button>
             </form>
+            <div class="col-lg-10 text-center m-5">
+                <p>Belum punya akun?</p>
+                <a href="{{ url('register') }}">Registrasi Sekarang</a>
+            </div>
         </div>
     </div>
     @endsection

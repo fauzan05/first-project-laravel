@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\MyBlogs;
 use App\Models\Post;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
 
 class PostController extends Controller
 {
@@ -49,6 +51,8 @@ class PostController extends Controller
             'content' => $content,
             'updated_at' => null
         ]);
+
+        Mail::to('fatimatuzzahro0802@gmail.com')->send(new MyBlogs());
 
         return redirect('posts');
     }
